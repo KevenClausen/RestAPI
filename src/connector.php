@@ -1,11 +1,10 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 use KPG\RestAPI\ILIAS\Authenticator;
 use KPG\RestAPI\ILIAS\ILIASInit;
 use KPG\RestAPI\ILIAS\Logger\Logger;
+use KPG\RestAPI\API\HTTP\Request;
+use KPG\RestAPI\API\HTTP\Response;
 
 require_once('ILIASInit.php');
 ILIASInit::init();
@@ -15,9 +14,9 @@ try {
     if ($authenticator->auth()) {
         global $DIC;
         Logger::setUserId($DIC->user()->getId());
-        (new \KPG\RestAPI\API\HTTP\Request())->route();
+        (new Request())->route();
     } else {
-        (new \KPG\RestAPI\API\HTTP\Response())->send401();
+        (new Response())->send401();
     }
 } catch (Exception $e) {
     echo $e->getMessage();

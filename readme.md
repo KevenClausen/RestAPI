@@ -53,12 +53,12 @@ cd Customizing/global/plugins/Services/EventHandling/EventHook
 
 **Clone with SSH**
 ```bash
-git clone git@gitlab.kroepelin-projekte.de:kpg/ilias-plugins/resthook/restapi.git RestAPI
+git clone git@github.com:kroepelin-projekte/RestAPI.git RestAPI
 ```
 
 **Or clone with HTTPS**
 ```bash
-git clone https://gitlab.kroepelin-projekte.de/kpg/ilias-plugins/resthook/restapi.git RestAPI
+git clone https://github.com/kroepelin-projekte/RestAPI.git RestAPI
 ```
 
 **Install dependencies**
