@@ -1,0 +1,14 @@
+.il-input-radio {
+    display: flex;
+    gap: 17px;
+}
+
+.events_multiselect {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-label {
+    line-height: 3.3 !important;
+}

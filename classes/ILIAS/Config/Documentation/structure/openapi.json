@@ -1,0 +1,2807 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "REST API FOR ILIAS",
+        "description": "Describes the various components and endpoints of the ILIAS REST API.",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/kpg/category": {},
+        "/ilias/course": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get all courses",
+                "description": "Retrieve all courses from the ILIAS instance that are neither deleted nor in the trash.",
+                "operationId": "getAllCourses",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/LimitParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OffsetParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/SearchParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FieldsParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FilterParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OrderParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GetCoursesResponse"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerErrorResponse"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthFailedResponse"
+                    }
+                }
+            }
+        },
+        "/ilias/group": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "ILIAS Groups",
+                "description": "Returns all Groups of the ILIAS instance",
+                "operationId": "getAllGroups",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/LimitParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OffsetParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/SearchParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FieldsParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FilterParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OrderParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GetGroupsResponse"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerErrorResponse"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthFailedResponse"
+                    }
+                }
+            }
+        },
+        "/ilias/repository": {},
+        "/ilias/test": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAllTests",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAllUsers",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/category": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "ILIAS Categorys",
+                "description": "Returns all categories of the ILIAS instance",
+                "operationId": "getCategorys",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/LimitParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OffsetParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/SearchParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FieldsParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FilterParameter"
+                    },
+                    {
+                        "$ref": "#/components/parameters/OrderParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GetCategorysResponse"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerErrorResponse"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthFailedResponse"
+                    }
+                }
+            }
+        },
+        "/ilias/category/{ref_id}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "ILIAS Category",
+                "description": "Returns a Category of the ILIAS instance",
+                "operationId": "getCategoryById",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/RefIDParamater"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FieldsParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GetCategoryResponse"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/CategoryNotFoundResponse"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerErrorResponse"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthFailedResponse"
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "description": "Get Course By Ref_id",
+                "operationId": "getCourseById",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/RefIDParamater"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FieldsParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GetCoursesResponse"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerErrorResponse"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthFailedResponse"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/CourseNotFoundResponse"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Course"
+                ],
+                "description": "Update Course by Setter Methods",
+                "operationId": "updateCourseByRefId",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "The Ref ID of the course",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "JSON object containing the fields to update",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "showMembersExport": {
+                                        "description": "Whether members export should be shown",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "registrationAccessCode": {
+                                        "description": "The registration access code for the course",
+                                        "type": "string",
+                                        "example": "REG123"
+                                    },
+                                    "importantInformation": {
+                                        "description": "Important information about the course",
+                                        "type": "string",
+                                        "example": "Important course details"
+                                    },
+                                    "syllabus": {
+                                        "description": "Syllabus details",
+                                        "type": "string",
+                                        "example": "Course syllabus content"
+                                    },
+                                    "targetGroup": {
+                                        "description": "The target group for the course",
+                                        "type": "string",
+                                        "example": "IT Professionals"
+                                    },
+                                    "contactName": {
+                                        "description": "Name of the course contact",
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "contactConsultation": {
+                                        "description": "Consultation details for the contact",
+                                        "type": "string",
+                                        "example": "Every Monday, 10:00 to 12:00"
+                                    },
+                                    "contactPhone": {
+                                        "description": "Phone number of the contact person",
+                                        "type": "string",
+                                        "example": "+49 123 456 789"
+                                    },
+                                    "contactEmail": {
+                                        "description": "Email of the contact person",
+                                        "type": "string",
+                                        "example": "contact@example.com"
+                                    },
+                                    "contactResponsibility": {
+                                        "description": "Responsibility of the contact person",
+                                        "type": "string",
+                                        "example": "Course coordinator"
+                                    },
+                                    "activationStart": {
+                                        "description": "Activation start time (timestamp)",
+                                        "type": "integer",
+                                        "example": 1681234567
+                                    },
+                                    "activationEnd": {
+                                        "description": "Activation end time (timestamp)",
+                                        "type": "integer",
+                                        "example": 1689876543
+                                    },
+                                    "activationVisibility": {
+                                        "description": "Visibility of activation",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "subscriptionLimitationType": {
+                                        "description": "Type of subscription limitation",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "subscriptionStart": {
+                                        "description": "Subscription start time (timestamp)",
+                                        "type": "integer",
+                                        "example": 1681234567
+                                    },
+                                    "subscriptionEnd": {
+                                        "description": "Subscription end time (timestamp)",
+                                        "type": "integer",
+                                        "example": 1689876543
+                                    },
+                                    "subscriptionType": {
+                                        "description": "Type of subscription",
+                                        "type": "integer",
+                                        "example": 2
+                                    },
+                                    "subscriptionPassword": {
+                                        "description": "Password required for subscription",
+                                        "type": "string",
+                                        "example": "password123"
+                                    },
+                                    "numberOfPreviousSessions": {
+                                        "description": "Number of previous sessions to show",
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "numberOfNextSessions": {
+                                        "description": "Number of upcoming sessions to show",
+                                        "type": "integer",
+                                        "example": 3
+                                    },
+                                    "subscriptionMaxMembers": {
+                                        "description": "Maximum number of members allowed in the subscription",
+                                        "type": "integer",
+                                        "example": 100
+                                    },
+                                    "viewMode": {
+                                        "description": "View mode for the course",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "timingMode": {
+                                        "description": "Timing mode for the course",
+                                        "type": "integer",
+                                        "example": 2
+                                    },
+                                    "aboStatus": {
+                                        "description": "Abo status of the course",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "showMembers": {
+                                        "description": "Whether to show members",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "mailToMembersType": {
+                                        "description": "Mail type sent to members",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "message": {
+                                        "description": "Course message",
+                                        "type": "string",
+                                        "example": "Welcome to the course"
+                                    },
+                                    "latitude": {
+                                        "description": "Latitude of the course location",
+                                        "type": "string",
+                                        "example": "52.5200"
+                                    },
+                                    "longitude": {
+                                        "description": "Longitude of the course location",
+                                        "type": "string",
+                                        "example": "13.4050"
+                                    },
+                                    "locationZoom": {
+                                        "description": "Zoom level for the course location",
+                                        "type": "integer",
+                                        "example": 15
+                                    },
+                                    "enableCourseMap": {
+                                        "description": "Enable course map",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "coursePeriod": {
+                                        "description": "The period of the course",
+                                        "properties": {
+                                            "start": {
+                                                "type": "string",
+                                                "format": "date-time",
+                                                "example": "2023-07-01T00:00:00Z"
+                                            },
+                                            "end": {
+                                                "type": "string",
+                                                "format": "date-time",
+                                                "example": "2023-12-31T23:59:59Z"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "cancellationEnd": {
+                                        "description": "The cancellation end date",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2023-12-01"
+                                    },
+                                    "subscriptionMinMembers": {
+                                        "description": "Minimum number of members required for subscription",
+                                        "type": "integer",
+                                        "example": 10
+                                    },
+                                    "waitingListAutoFill": {
+                                        "description": "Waiting list autofill status",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "parentRolePermissions": {
+                                        "description": "Parent role permissions ID",
+                                        "type": "integer",
+                                        "example": 1234
+                                    },
+                                    "autoNotification": {
+                                        "description": "Enable or disable auto notifications",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "statusDetermination": {
+                                        "description": "Status determination type",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "objectTranslation": {
+                                        "description": "Object translation details",
+                                        "type": "string",
+                                        "example": "{\"de\": \"Kurs\", \"en\": \"Course\"}"
+                                    },
+                                    "hiddenFilesFound": {
+                                        "description": "Status of hidden files found",
+                                        "type": "boolean",
+                                        "example": false
+                                    },
+                                    "styleSheetId": {
+                                        "description": "Stylesheet ID for the course",
+                                        "type": "integer",
+                                        "example": 101
+                                    },
+                                    "newsTimeline": {
+                                        "description": "Enable or disable news timeline",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "newsTimelineAutoEntries": {
+                                        "description": "Enable or disable auto entries in news timeline",
+                                        "type": "boolean",
+                                        "example": false
+                                    },
+                                    "newsTimelineLandingPage": {
+                                        "description": "Enable or disable news timeline on the landing page",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "newsBlockActivated": {
+                                        "description": "Enable or disable the news block",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "useNews": {
+                                        "description": "Enable or disable the use of news",
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "orderType": {
+                                        "description": "Order type for the course",
+                                        "type": "integer",
+                                        "example": 3
+                                    },
+                                    "id": {
+                                        "description": "Course ID",
+                                        "type": "integer",
+                                        "example": 1001
+                                    },
+                                    "refId": {
+                                        "description": "Course reference ID",
+                                        "type": "integer",
+                                        "example": 1234
+                                    },
+                                    "type": {
+                                        "description": "Course type",
+                                        "type": "string",
+                                        "example": "online"
+                                    },
+                                    "title": {
+                                        "description": "Course title",
+                                        "type": "string",
+                                        "example": "Advanced PHP Programming"
+                                    },
+                                    "description": {
+                                        "description": "Description of the course",
+                                        "type": "string",
+                                        "example": "This course covers advanced PHP programming techniques."
+                                    },
+                                    "importId": {
+                                        "description": "Import ID of the course",
+                                        "type": "string",
+                                        "example": "IMPORT1234"
+                                    },
+                                    "offlineStatus": {
+                                        "description": "Offline status of the course",
+                                        "type": "boolean",
+                                        "example": false
+                                    },
+                                    "owner": {
+                                        "description": "ID of the course owner",
+                                        "type": "integer",
+                                        "example": 2001
+                                    },
+                                    "deletedDates": {
+                                        "description": "Deleted dates related to the course",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        },
+                                        "example": [
+                                            101,
+                                            102
+                                        ]
+                                    },
+                                    "permissions": {
+                                        "description": "Parent reference permissions",
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Update war erfolgreich",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "description": "HTTP Response Code",
+                                            "type": "integer",
+                                            "example": 201
+                                        },
+                                        "error_code": {
+                                            "description": "Error Code (not applicable for successful requests)",
+                                            "type": "string",
+                                            "example": null,
+                                            "nullable": true
+                                        },
+                                        "response_data": {
+                                            "description": "Response Data",
+                                            "type": "object",
+                                            "example": []
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Course not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "description": "HTTP Response Code",
+                                            "type": "integer",
+                                            "example": 404
+                                        },
+                                        "error_code": {
+                                            "description": "The specific error code for this failure",
+                                            "type": "string",
+                                            "example": "COURSE_NOT_FOUND"
+                                        },
+                                        "response_data": {
+                                            "description": "Response Data",
+                                            "type": "object",
+                                            "example": []
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "One or more of the methods used in the request are not supported",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "description": "HTTP Response Code",
+                                            "type": "integer",
+                                            "example": 400
+                                        },
+                                        "error_code": {
+                                            "description": "The specific error code for this failure",
+                                            "type": "string",
+                                            "example": "METHOD_NOT_FOUND"
+                                        },
+                                        "response_data": {
+                                            "description": "Response Data",
+                                            "properties": {
+                                                "failed_methods": {
+                                                    "description": "List of invalid or non-existent methods",
+                                                    "type": "string",
+                                                    "example": [
+                                                        "method_1, method_2"
+                                                    ]
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/users/{user_id}/{default_role}": {
+            "put": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Add a user to a course",
+                "description": "Adds a user to a course with a specific role",
+                "operationId": "addUser",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "Ref_id of the course",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "Id of the user",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "default_role",
+                        "in": "path",
+                        "description": "Default role of the course. admin, tutor, member",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success add user to course"
+                    },
+                    "404": {
+                        "description": "Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "COURSE_NOT_FOUND": {
+                                        "summary": "COURSE_NOT_FOUND",
+                                        "description": "Course not found"
+                                    },
+                                    "USER_NOT_FOUND": {
+                                        "summary": "USER_NOT_FOUND",
+                                        "description": "User not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/users": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get all users of a course",
+                "description": "Retrieves all users associated with the given course ID.",
+                "operationId": "getAllUsers",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "The reference ID of the course.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of users retrieved successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "user_id": {
+                                                "description": "The ID of the user.",
+                                                "type": "integer"
+                                            },
+                                            "login": {
+                                                "description": "The login name of the user.",
+                                                "type": "string"
+                                            },
+                                            "firstname": {
+                                                "description": "The first name of the user.",
+                                                "type": "string"
+                                            },
+                                            "lastname": {
+                                                "description": "The last name of the user.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Course not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "COURSE_NOT_FOUND": {
+                                        "summary": "Course not found",
+                                        "description": "The course with the provided ref_id does not exist."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/users/members": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get all Members of a course",
+                "description": "Retrieves all Members associated with the given course ID.",
+                "operationId": "getAllMembers",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "The reference ID of the course.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of users retrieved successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "user_id": {
+                                                "description": "The ID of the user.",
+                                                "type": "integer"
+                                            },
+                                            "login": {
+                                                "description": "The login name of the user.",
+                                                "type": "string"
+                                            },
+                                            "firstname": {
+                                                "description": "The first name of the user.",
+                                                "type": "string"
+                                            },
+                                            "lastname": {
+                                                "description": "The last name of the user.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Course not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "COURSE_NOT_FOUND": {
+                                        "summary": "Course not found",
+                                        "description": "The course with the provided ref_id does not exist."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/users/tutors": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get all Tutors of a course",
+                "description": "Retrieves all Tutors associated with the given course ID.",
+                "operationId": "getAllTutors",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "The reference ID of the course.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of users retrieved successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "user_id": {
+                                                "description": "The ID of the user.",
+                                                "type": "integer"
+                                            },
+                                            "login": {
+                                                "description": "The login name of the user.",
+                                                "type": "string"
+                                            },
+                                            "firstname": {
+                                                "description": "The first name of the user.",
+                                                "type": "string"
+                                            },
+                                            "lastname": {
+                                                "description": "The last name of the user.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Course not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "COURSE_NOT_FOUND": {
+                                        "summary": "Course not found",
+                                        "description": "The course with the provided ref_id does not exist."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/users/admin": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Get all Admins of a course",
+                "description": "Retrieves all Admins associated with the given course ID.",
+                "operationId": "getAllAdmin",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "The reference ID of the course.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of users retrieved successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "user_id": {
+                                                "description": "The ID of the user.",
+                                                "type": "integer"
+                                            },
+                                            "login": {
+                                                "description": "The login name of the user.",
+                                                "type": "string"
+                                            },
+                                            "firstname": {
+                                                "description": "The first name of the user.",
+                                                "type": "string"
+                                            },
+                                            "lastname": {
+                                                "description": "The last name of the user.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Course not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "COURSE_NOT_FOUND": {
+                                        "summary": "Course not found",
+                                        "description": "The course with the provided ref_id does not exist."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/users/{user_id}": {
+            "delete": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Delete a user from a course",
+                "description": "Deletes a user from a course",
+                "operationId": "deleteUser",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "Ref_id of the course",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "Id of the user",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success add user to course"
+                    },
+                    "404": {
+                        "description": "Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "COURSE_NOT_FOUND": {
+                                        "summary": "COURSE_NOT_FOUND",
+                                        "description": "Course not found"
+                                    },
+                                    "USER_NOT_FOUND": {
+                                        "summary": "USER_NOT_FOUND",
+                                        "description": "User not found"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/property/{property}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "DESCRIPTION",
+                "description": "DESCRIPTION",
+                "operationId": "getCourseInformation",
+                "parameters": [
+                    {
+                        "name": "ref_id",
+                        "in": "path",
+                        "description": "The reference ID of the course.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "The Property of the course.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of users retrieved successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "user_id": {
+                                                "description": "The ID of the user.",
+                                                "type": "integer"
+                                            },
+                                            "login": {
+                                                "description": "The login name of the user.",
+                                                "type": "string"
+                                            },
+                                            "firstname": {
+                                                "description": "The first name of the user.",
+                                                "type": "string"
+                                            },
+                                            "lastname": {
+                                                "description": "The last name of the user.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ilias/course/{ref_id}/roles": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getCourseRoles",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "ILIAS Group",
+                "description": "Returns a Group of the ILIAS instance",
+                "operationId": "getGroupByRefID",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/RefIDParamater"
+                    },
+                    {
+                        "$ref": "#/components/parameters/FieldsParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/GetGroupResponse"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerErrorResponse"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthFailedResponse"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/GroupNotFoundResponse"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "updateGroupByRefId",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/property/{property}": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getGroupInformation",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/users/{user_id}/{default_role}": {
+            "put": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "addUser",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/users/{user_id}": {
+            "delete": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "deleteUser",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/users": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAllUsers",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/admins": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAllAdmins",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/members": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAllMembers",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/group/{ref_id}/roles": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getGroupRoles",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "objectInformation",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "deleteObject",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/exists": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "objectExists",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/type": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getObjectType",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/parent": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getParent",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/childrens": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getChildren",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/copy/{target_ref_id}": {
+            "put": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "copyObject",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/advancedmetadata": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAdvancedMetaData",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/learninghistory/users": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getLearningHistoryUsers",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/repository/{ref_id}/learninghistory/users/{user_id}": {
+            "get": {
+                "tags": [
+                    "Repository"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getLearningHistoryByUserID",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getTestById",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/info": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getTestInfoById",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/settings/general": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getTestSettingsGeneralById",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "updateTestSettingsGeneralById",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/settings/grading-system": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getAllGradingByRefid",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "patchGrading",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/settings/grading-system/{short_name}": {
+            "delete": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "deleteGrading",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/settings/grading-system/reset": {
+            "patch": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "resetGrading",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/participants": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getParticipants",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/results": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getResults",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/test/{ref_id}/results/{user_id}": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getResultsByUser",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getUserInformation",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "deleteUser",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "updateUser",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/course": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getUserCourses",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/group": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getUserGroups",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/role": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getUserRoles",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/role/{role_id}": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "addUserRoleEntry",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "deleteUserRoleEntry",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/customfield": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getUserCustomFields",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "setUserCustomFields",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/customfield/{customfield}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "getUserCustomFieldsByCustomFieldName",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/exists": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "userExists",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        },
+        "/ilias/user/{user_id}/export": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Description",
+                "description": "Description",
+                "operationId": "userExport",
+                "responses": {
+                    "200": {
+                        "description": "Erfolgreiche Antwort"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetCategoryResponseDataSchema": {
+                "description": "Category details",
+                "properties": {
+                    "ref_id": {
+                        "$ref": "#/components/schemas/RefIdSchema"
+                    },
+                    "obj_id": {
+                        "$ref": "#/components/schemas/ObjIdSchema"
+                    },
+                    "title": {
+                        "$ref": "#/components/schemas/TitleSchema"
+                    },
+                    "presentation_title": {
+                        "$ref": "#/components/schemas/PresentationTitleSchema"
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/DescriptionSchema"
+                    },
+                    "long_description": {
+                        "$ref": "#/components/schemas/LongDescriptionSchema"
+                    },
+                    "offlineStatus": {
+                        "$ref": "#/components/schemas/OfflineStatusSchema"
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/OwnerSchema"
+                    },
+                    "creation_date": {
+                        "$ref": "#/components/schemas/CreateDateSchema"
+                    }
+                },
+                "type": "object"
+            },
+            "GetCategorysResponseDataSchema": {
+                "description": "Category details",
+                "properties": {
+                    "ref_id": {
+                        "$ref": "#/components/schemas/RefIdSchema"
+                    },
+                    "obj_id": {
+                        "$ref": "#/components/schemas/ObjIdSchema"
+                    },
+                    "title": {
+                        "$ref": "#/components/schemas/TitleSchema"
+                    },
+                    "presentation_title": {
+                        "$ref": "#/components/schemas/ParentIdSchema"
+                    }
+                },
+                "type": "object"
+            },
+            "GetCourseResponseDataSchema": {
+                "description": "Course details",
+                "properties": {
+                    "ref_id": {
+                        "$ref": "#/components/schemas/RefIdSchema"
+                    },
+                    "obj_id": {
+                        "$ref": "#/components/schemas/ObjIdSchema"
+                    },
+                    "title": {
+                        "$ref": "#/components/schemas/TitleSchema"
+                    },
+                    "presentation_title": {
+                        "$ref": "#/components/schemas/PresentationTitleSchema"
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/DescriptionSchema"
+                    },
+                    "long_description": {
+                        "$ref": "#/components/schemas/LongDescriptionSchema"
+                    },
+                    "offlineStatus": {
+                        "$ref": "#/components/schemas/OfflineStatusSchema"
+                    },
+                    "owner": {
+                        "$ref": "#/components/schemas/OwnerSchema"
+                    },
+                    "creation_date": {
+                        "$ref": "#/components/schemas/CreateDateSchema"
+                    }
+                },
+                "type": "object"
+            },
+            "GetCoursesResponseDataSchema": {
+                "description": "Course details",
+                "properties": {
+                    "ref_id": {
+                        "$ref": "#/components/schemas/RefIdSchema"
+                    },
+                    "obj_id": {
+                        "$ref": "#/components/schemas/ObjIdSchema"
+                    },
+                    "title": {
+                        "$ref": "#/components/schemas/TitleSchema"
+                    },
+                    "presentation_title": {
+                        "$ref": "#/components/schemas/ParentIdSchema"
+                    }
+                },
+                "type": "object"
+            },
+            "GetGroupResponseDataSchema": {
+                "description": "Group details",
+                "properties": {
+                    "ref_id": {
+                        "$ref": "#/components/schemas/RefIdSchema"
+                    },
+                    "obj_id": {
+                        "$ref": "#/components/schemas/ObjIdSchema"
+                    },
+                    "title": {
+                        "$ref": "#/components/schemas/TitleSchema"
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/DescriptionSchema"
+                    },
+                    "long_description": {
+                        "$ref": "#/components/schemas/LongDescriptionSchema"
+                    },
+                    "owner": {
+                        "description": "Owner details",
+                        "properties": {
+                            "id": {
+                                "$ref": "#/components/schemas/OwnerSchema"
+                            },
+                            "name": {
+                                "$ref": "#/components/schemas/OwnerNameSchema"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "create_date": {
+                        "$ref": "#/components/schemas/CreateDateSchema"
+                    },
+                    "last_update": {
+                        "$ref": "#/components/schemas/LastUpdateDataSchema"
+                    },
+                    "import_id": {
+                        "$ref": "#/components/schemas/ImportIdSchema"
+                    },
+                    "offline": {
+                        "$ref": "#/components/schemas/OfflineStatusSchema"
+                    },
+                    "default_roles": {
+                        "description": "Default roles",
+                        "properties": {
+                            "default_member_role": {
+                                "$ref": "#/components/schemas/RoleNameSchema"
+                            },
+                            "default_admin_role": {
+                                "$ref": "#/components/schemas/RoleNameSchema"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "roles": {
+                        "description": "Custom roles for the group",
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/RoleNameSchema"
+                        }
+                    },
+                    "parent": {
+                        "description": "Parent information",
+                        "properties": {
+                            "ref_id": {
+                                "$ref": "#/components/schemas/RefIdSchema"
+                            },
+                            "obj_id": {
+                                "$ref": "#/components/schemas/ObjIdSchema"
+                            },
+                            "title": {
+                                "$ref": "#/components/schemas/TitleSchema"
+                            },
+                            "type": {
+                                "$ref": "#/components/schemas/ObjectTypeSchema"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "childs": {
+                        "description": "Child objects",
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "ref_id": {
+                                    "$ref": "#/components/schemas/RefIdSchema"
+                                },
+                                "obj_id": {
+                                    "$ref": "#/components/schemas/ObjIdSchema"
+                                },
+                                "title": {
+                                    "$ref": "#/components/schemas/TitleSchema"
+                                },
+                                "type": {
+                                    "$ref": "#/components/schemas/ObjectTypeSchema"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "GetGroupsResponseDataSchema": {
+                "description": "Category details",
+                "properties": {
+                    "ref_id": {
+                        "$ref": "#/components/schemas/RefIdSchema"
+                    },
+                    "obj_id": {
+                        "$ref": "#/components/schemas/ObjIdSchema"
+                    },
+                    "title": {
+                        "$ref": "#/components/schemas/TitleSchema"
+                    },
+                    "presentation_title": {
+                        "$ref": "#/components/schemas/ParentIdSchema"
+                    }
+                },
+                "type": "object"
+            },
+            "CreateDateSchema": {
+                "description": "The creation date of the object in ISO 8601 format",
+                "type": "string",
+                "format": "date-time",
+                "example": "2025-08-13T14:35:00Z"
+            },
+            "DescriptionSchema": {
+                "description": "Short description of the ILIAS object",
+                "type": "string",
+                "example": "This Module contains all basic mathematics tests."
+            },
+            "ImportIdSchema": {
+                "description": "Import Identifier of ILIAS Object",
+                "type": "integer",
+                "format": "int64",
+                "example": 133
+            },
+            "LastUpdateDataSchema": {
+                "description": "Last Update ILIAS object",
+                "type": "string",
+                "example": "2025-04-20 16:56:19"
+            },
+            "LongDescriptionSchema": {
+                "description": "Detailed description of the ILIAS object",
+                "type": "string",
+                "example": "This Module provides comprehensive resources and assessments for mathematics beginners."
+            },
+            "ObjIdSchema": {
+                "description": "Object Identifier of ILIAS Object",
+                "type": "integer",
+                "format": "int64",
+                "example": 612
+            },
+            "ObjectTypeSchema": {
+                "description": "The of ILIAS object",
+                "type": "string",
+                "example": "crs"
+            },
+            "OfflineStatusSchema": {
+                "description": "Indicates whether the object is offline or active",
+                "type": "boolean",
+                "example": false
+            },
+            "OwnerNameSchema": {
+                "description": "The name of the user who owns the ILIAS object",
+                "type": "string",
+                "example": "John Doe"
+            },
+            "OwnerSchema": {
+                "description": "The ID of the user who owns the ILIAS object",
+                "type": "integer",
+                "format": "int64",
+                "example": 45
+            },
+            "ParentIdSchema": {
+                "description": "Parent Identifier of ILIAS Object",
+                "type": "integer",
+                "format": "int64",
+                "example": 133
+            },
+            "PresentationTitleSchema": {
+                "description": "The presentation title of the object",
+                "type": "string",
+                "example": "Mathematics – Introduction"
+            },
+            "RefIdSchema": {
+                "description": "Reference Identifier of ILIAS Object",
+                "type": "integer",
+                "format": "int64",
+                "example": 133
+            },
+            "ResponseDefaultSchema": {
+                "description": "Standard API response structure",
+                "properties": {
+                    "status_code": {
+                        "type": "integer",
+                        "example": 200
+                    },
+                    "error_code": {
+                        "type": "string",
+                        "example": "",
+                        "nullable": true
+                    },
+                    "response_data": {
+                        "type": "object"
+                    },
+                    "meta": {
+                        "type": "object",
+                        "example": {
+                            "pagination": {
+                                "limit": 10,
+                                "offset": 0
+                            },
+                            "sorting": {
+                                "field": "title",
+                                "direction": "asc"
+                            }
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "RoleNameSchema": {
+                "description": "The Role name",
+                "type": "string",
+                "example": "Guest"
+            },
+            "TitleSchema": {
+                "description": "The title of the ILIAS object",
+                "type": "string",
+                "example": "Mathematics Semester 1"
+            }
+        },
+        "responses": {
+            "GetCategoryResponse": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "response_data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/GetCategoryResponseDataSchema"
+                                            },
+                                            "example": [
+                                                {
+                                                    "ref_id": 133,
+                                                    "obj_id": 612,
+                                                    "title": "Mathematics Semester 1",
+                                                    "presentation_title": "Math Sem 1",
+                                                    "description": "Basic math category",
+                                                    "long_description": "Detailed description for Mathematics Semester 1",
+                                                    "offlineStatus": false,
+                                                    "owner": 134,
+                                                    "creation_date": "2025-08-15T12:00:00Z"
+                                                },
+                                                {
+                                                    "ref_id": 134,
+                                                    "obj_id": 613,
+                                                    "title": "Physics Semester 1",
+                                                    "presentation_title": "Physics Sem 1",
+                                                    "description": "Basic physics category",
+                                                    "long_description": "Detailed description for Physics Semester 1",
+                                                    "offlineStatus": true,
+                                                    "owner": 135,
+                                                    "creation_date": "2025-08-10T12:00:00Z"
+                                                },
+                                                {
+                                                    "ref_id": 135,
+                                                    "obj_id": 614,
+                                                    "title": "Chemistry Semester 1",
+                                                    "presentation_title": "Chem Sem 1",
+                                                    "description": "Basic chemistry category",
+                                                    "long_description": "Detailed description for Chemistry Semester 1",
+                                                    "offlineStatus": false,
+                                                    "owner": 155,
+                                                    "creation_date": "2025-08-12T12:00:00Z"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "GetCategorysResponse": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "response_data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/GetCategorysResponseDataSchema"
+                                            },
+                                            "example": [
+                                                {
+                                                    "ref_id": 133,
+                                                    "obj_id": 612,
+                                                    "title": "Mathematics Semester 1",
+                                                    "parent_id": 1245
+                                                },
+                                                {
+                                                    "ref_id": 134,
+                                                    "obj_id": 613,
+                                                    "title": "Physics Semester 1",
+                                                    "parent_id": 1145
+                                                },
+                                                {
+                                                    "ref_id": 135,
+                                                    "obj_id": 614,
+                                                    "title": "Chemistry Semester 1",
+                                                    "parent_id": 1145
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "GetCourseResponse": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "response_data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/GetCourseResponseDataSchema"
+                                            },
+                                            "example": [
+                                                {
+                                                    "ref_id": 133,
+                                                    "obj_id": 612,
+                                                    "title": "Mathematics Semester 1",
+                                                    "presentation_title": "Math Sem 1",
+                                                    "description": "Basic math category",
+                                                    "long_description": "Detailed description for Mathematics Semester 1",
+                                                    "offlineStatus": false,
+                                                    "owner": 134,
+                                                    "creation_date": "2025-08-15T12:00:00Z"
+                                                },
+                                                {
+                                                    "ref_id": 134,
+                                                    "obj_id": 613,
+                                                    "title": "Physics Semester 1",
+                                                    "presentation_title": "Physics Sem 1",
+                                                    "description": "Basic physics category",
+                                                    "long_description": "Detailed description for Physics Semester 1",
+                                                    "offlineStatus": true,
+                                                    "owner": 135,
+                                                    "creation_date": "2025-08-10T12:00:00Z"
+                                                },
+                                                {
+                                                    "ref_id": 135,
+                                                    "obj_id": 614,
+                                                    "title": "Chemistry Semester 1",
+                                                    "presentation_title": "Chem Sem 1",
+                                                    "description": "Basic chemistry category",
+                                                    "long_description": "Detailed description for Chemistry Semester 1",
+                                                    "offlineStatus": false,
+                                                    "owner": 155,
+                                                    "creation_date": "2025-08-12T12:00:00Z"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "GetCoursesResponse": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "response_data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/GetCoursesResponseDataSchema"
+                                            },
+                                            "example": [
+                                                {
+                                                    "ref_id": 133,
+                                                    "obj_id": 612,
+                                                    "title": "Mathematics Semester 1",
+                                                    "parent_id": 1245
+                                                },
+                                                {
+                                                    "ref_id": 134,
+                                                    "obj_id": 613,
+                                                    "title": "Physics Semester 1",
+                                                    "parent_id": 1145
+                                                },
+                                                {
+                                                    "ref_id": 135,
+                                                    "obj_id": 614,
+                                                    "title": "Chemistry Semester 1",
+                                                    "parent_id": 1145
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "GetGroupResponse": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "response_data": {
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/GetGroupResponseDataSchema"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "GetGroupsResponse": {
+                "description": "OK",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "response_data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/GetGroupsResponseDataSchema"
+                                            },
+                                            "example": [
+                                                {
+                                                    "ref_id": 133,
+                                                    "obj_id": 612,
+                                                    "title": "Mathematics Semester 1",
+                                                    "parent_id": 1245
+                                                },
+                                                {
+                                                    "ref_id": 134,
+                                                    "obj_id": 613,
+                                                    "title": "Physics Semester 1",
+                                                    "parent_id": 1145
+                                                },
+                                                {
+                                                    "ref_id": 135,
+                                                    "obj_id": 614,
+                                                    "title": "Chemistry Semester 1",
+                                                    "parent_id": 1145
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "AttributesNotFoundResponse": {
+                "description": "ATTRIBUTES NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "ATTRIBUTES_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "AuthFailedResponse": {
+                "description": "AUTH FAILED",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "AUTH_FAILED"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "CategoryNotFoundResponse": {
+                "description": "CATEGORY NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "CATEGORY_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "CourseNotFoundResponse": {
+                "description": "COURSE NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "COURSE_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "CreatedResponse": {
+                "description": "CREATED",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "DefaultRoleNotFoundResponse": {
+                "description": "DEFAULT ROLE NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "DEFAULT_ROLE_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "GroupNotFoundResponse": {
+                "description": "GROUP NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "GROUP_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "InternalServerErrorResponse": {
+                "description": "INTERNAL SERVER ERROR",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "INTERNAL_SERVER_ERROR"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "ObjectNotFoundResponse": {
+                "description": "OBJECT NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "OBJECT_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "RequierdFieldsNotFoundResponse": {
+                "description": "USER REQUIERD FIELD NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "USER_REQUIERD_FIELD_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "RoleNotFoundResponse": {
+                "description": "ROLE NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "ROLE_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "TestNotFoundResponse": {
+                "description": "TEST NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "TEST_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "UserLoginExistsResponse": {
+                "description": "USER LOGIN EXISTS",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "USER_LOGIN_EXISTS"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "UserNotFoundResponse": {
+                "description": "USER NOT FOUND",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/ResponseDefaultSchema"
+                                },
+                                {
+                                    "properties": {
+                                        "error_code": {
+                                            "type": "string",
+                                            "example": "USER_NOT_FOUND"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "FieldsParameter": {
+                "name": "fields",
+                "in": "query",
+                "description": "Comma-separated list of keys. Only the specified keys will be included in the response. Example: `name,description,date`.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "name,description,date"
+                }
+            },
+            "FilterParameter": {
+                "name": "filter",
+                "in": "query",
+                "description": "Advanced filtering with the format `filter[field.operator]=value`. Supported operators: `eq`, `neq`, `in`, `not`, `gt`, `lt`, `gte`, `lte`, `between`.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "filter[status.eq]=active&filter[price.between]=10,20"
+                }
+            },
+            "LimitParameter": {
+                "name": "limit",
+                "in": "query",
+                "description": "The maximum number of results to return.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "OffsetParameter": {
+                "name": "offset",
+                "in": "query",
+                "description": "The starting index of the results for pagination.",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            "OrderParameter": {
+                "name": "order",
+                "in": "query",
+                "description": "The sorting structure for results in the format field:direction (e.g., 'title:asc' or 'title:desc'). Direction can be omitted, default is 'asc'.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "title:asc"
+                }
+            },
+            "RefIDParamater": {
+                "name": "ref_id",
+                "in": "path",
+                "description": "Reference ID of ILIAS Object",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 122
+                }
+            },
+            "SearchParameter": {
+                "name": "search",
+                "in": "query",
+                "description": "Search for results. Available formats: (1) `search=element` for substring matching across all records, or (2) `search[field]=element` to search within a specific field.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "search[title]=example"
+                }
+            }
+        },
+        "securitySchemes": {
+            "basic": {
+                "type": "http",
+                "description": "The username and password to authenticate with the API."
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Category",
+            "description": "&nbsp;&nbsp;<b>Sponsor:</b> Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />\n                  &nbsp;&nbsp;<b>Version:</b> 0.0.1"
+        },
+        {
+            "name": "Course",
+            "description": "&nbsp;&nbsp;<b>Sponsor:</b> Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />\n                  &nbsp;&nbsp;<b>Version:</b> 1.0.0"
+        },
+        {
+            "name": "Group",
+            "description": "&nbsp;&nbsp;<b>Sponsor:</b> Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />\n                  &nbsp;&nbsp;<b>Version:</b> 1.0.0"
+        },
+        {
+            "name": "Repository",
+            "description": "&nbsp;&nbsp;<b>Sponsor:</b> Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />\n                  &nbsp;&nbsp;<b>Version:</b> 1.0.0"
+        },
+        {
+            "name": "Test",
+            "description": "&nbsp;&nbsp;<b>Sponsor:</b> Heinrich Heine Universität<br />\n                  &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />\n                  &nbsp;&nbsp;<b>Version:</b> 1.0.0"
+        },
+        {
+            "name": "User",
+            "description": "&nbsp;&nbsp;<b>Sponsor:</b> Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />\n                  &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />\n                  &nbsp;&nbsp;<b>Version:</b> 1.0.0"
+        }
+    ]
+}

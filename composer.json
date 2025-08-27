@@ -1,0 +1,21 @@
+{
+  "name": "example/openapi-project",
+  "description": "Ein Beispielprojekt zur Nutzung von swagger-php für OpenAPI-Dokumentation",
+  "keywords": ["swagger", "openapi", "documentation"],
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.1",
+    "zircote/swagger-php": "^4.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "KPG\\RestAPI\\": "classes/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "echo 'Installation abgeschlossen! Viel Spaß mit swagger-php!'"
+    ]
+  }
+}

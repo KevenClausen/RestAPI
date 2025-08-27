@@ -1,0 +1,20 @@
+lang_tab_permission#:#Berechtigungen
+lang_tab_api_documentation#:#API Dokumentation
+lang_tab_logs#:#Logs
+lang_tab_sub_api_permission#:#API Zugriffsberechtigungen
+lang_tab_sub_role_permission#:#Komponenten Zugriffsberechtigungen
+lang_tab_sub_logs_default#:#Allgemeiner Log
+lang_tab_sub_logs_error#:#Fehlerlog
+lang_permission_role_section#:#Rollenfreigabe
+lang_permission_role_section_byline#:#Adminstratoren haben dauerhaft Zugriff auf die Schnittstelle
+lang_api_permission_radio_button_no_permission#:#Kein Zugriff
+lang_api_permission_radio_button_custom#:#Berechtigungen setzen
+lang_api_permission_radio_button_full_permission#:#Vollständiger Zugriff
+lang_api_permission_msg_success#:#Berechtigungen wurden gesetzt
+lang_api_permission_msg_failed#:#Berechtigungen wurden nicht gesetzt. Bitte wenden Sie sich an den Systemadminstrator
+lang_title_ilias_api_documentation#:#ILIAS REST API Dokumentation
+lang_link_to_documentation#:#Link zur Dokumentation
+lang_link_to_documentation_byline#:#Dieser Link zeigt die Dokumentation, gefiltert nach den Rollenberechtigungen
+lang_developer_documentation#:#Entwickler Dokumentation
+lang_role_permission#:#Rollenberechtigung
+lang_component_permission#:#Komponentenberechtigung
