@@ -10,7 +10,6 @@ use ilAuthFrontendFactory;
 use KPG\RestAPI\ILIAS\Util\Roles;
 use KPG\RestAPI\ILIAS\Database\Tables\APIPermissionTable;
 use KPG\RestAPI\ILIAS\Config\Permission\PermissionModel;
-use KPG\RestAPI\ILIAS\Logger\Logger;
 
 class Authenticator
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace KPG\RestAPI\ILIAS\Logger;
+namespace KPG\RestAPI\API\Logger;
 
 use KPG\RestAPI\ILIAS\Database\Tables\APILogs;
 
@@ -12,10 +12,21 @@ class Logger
     private static string $requestBody = "";
     private static string $responseBody = "";
     private static int $responseCode = 000;
+    private static float $startTime;
+    private static float $executionTime;
 
     public static function setUserId(int $user_id): void
     {
         self::$user_id = $user_id;
+    }
+    public static function startTime(): void
+    {
+        self::$startTime = microtime(true);
+    }
+    public static function stopTime(): void
+    {
+        $endTime = microtime(true);
+        self::$executionTime = $endTime - self::$startTime;
     }
 
     public static function setRequestUrl(string $request_url): void
@@ -52,6 +63,7 @@ class Logger
             'requestBody' => self::$requestBody,
             'responseBody' => self::$responseBody,
             'responseCode' => self::$responseCode,
+            'executionTime' => self::$executionTime,
         ]);
     }
 }

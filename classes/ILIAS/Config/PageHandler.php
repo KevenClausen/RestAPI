@@ -44,10 +44,10 @@ class PageHandler implements TabConstant, LangConstant, CMDConstant
                 self::activateTab(self::TAB_ID_LOGS);
                 self::activateSubTab(self::TAB_SUB_ID_LOGS_DEFAULT);
                 break;
-            case self::CMD_SHOW_LOGS_ERROR:
+            case self::CMD_SHOW_LOGS_SETTINGS:
                 self::initSubTab(self::TAB_ID_LOGS);
                 self::activateTab(self::TAB_ID_LOGS);
-                self::activateSubTab(self::TAB_SUB_ID_LOGS_ERROR);
+                self::activateSubTab(self::TAB_SUB_ID_LOGS_SETTINGS);
                 break;
             default:
                 self::initSubTab(self::TAB_ID_PERMISSION);
@@ -102,9 +102,9 @@ class PageHandler implements TabConstant, LangConstant, CMDConstant
                 $DIC->ctrl()->getLinkTargetByClass(ilRestAPIConfigGUI::class, self::CMD_SHOW_LOGS_DEFAULT)
             );
             $DIC->tabs()->addSubTab(
-                self::TAB_SUB_ID_LOGS_ERROR,
-                self::getLang(self::LANG_TAB_SUB_LOGS_ERROR),
-                $DIC->ctrl()->getLinkTargetByClass(ilRestAPIConfigGUI::class, self::CMD_SHOW_LOGS_ERROR)
+                self::TAB_SUB_ID_LOGS_SETTINGS,
+                self::getLang(self::LANG_TAB_SUB_LOGS_SETTINGS),
+                $DIC->ctrl()->getLinkTargetByClass(ilRestAPIConfigGUI::class, self::CMD_SHOW_LOGS_SETTINGS)
             );
         }
     }

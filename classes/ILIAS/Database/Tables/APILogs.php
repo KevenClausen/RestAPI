@@ -6,7 +6,7 @@ class APILogs
 {
     private const TABLE_NAME = 'kpg_api_logs';
 
-    public function install()
+    public function install(): void
     {
         global $ilDB;
         if (!$ilDB->tableExists(self::TABLE_NAME)) {
@@ -47,8 +47,11 @@ class APILogs
                     'type' => 'integer',
                     'length' => 4,
                     'notnull' => true
+                ],
+                'executionTime' => [
+                    'type' => 'float',
+                    'notnull' => false
                 ]
-
             ];
             $ilDB->createTable(self::TABLE_NAME, $fields);
             $ilDB->addPrimaryKey(self::TABLE_NAME, ['id']);
@@ -56,7 +59,7 @@ class APILogs
         }
     }
 
-    public function uninstall()
+    public function uninstall(): void
     {
         global $ilDB;
         if ($ilDB->tableExists(self::TABLE_NAME)) {
@@ -64,7 +67,7 @@ class APILogs
         }
     }
 
-    public function writeLog(array $log)
+    public function writeLog(array $log): void
     {
         global $ilDB;
         $next_id = $ilDB->nextId(self::TABLE_NAME);
@@ -80,13 +83,13 @@ class APILogs
         ]);
     }
 
-    public function deleteAll()
+    public function deleteAll(): void
     {
         global $ilDB;
         $ilDB->manipulate("DELETE FROM " . self::TABLE_NAME);
     }
 
-    public function getAll()
+    public function getAll(): array
     {
         global $ilDB;
         $sql = "SELECT * FROM " . self::TABLE_NAME;

@@ -4,7 +4,7 @@ lang_tab_logs#:#Logs
 lang_tab_sub_api_permission#:#API Zugriffsberechtigungen
 lang_tab_sub_role_permission#:#Komponenten Zugriffsberechtigungen
 lang_tab_sub_logs_default#:#Allgemeiner Log
-lang_tab_sub_logs_error#:#Fehlerlog
+lang_tab_sub_logs_settings#:#Einstellungen
 lang_permission_role_section#:#Rollenfreigabe
 lang_permission_role_section_byline#:#Adminstratoren haben dauerhaft Zugriff auf die Schnittstelle
 lang_api_permission_radio_button_no_permission#:#Kein Zugriff

@@ -6,7 +6,7 @@ class APIPermissionTable
 {
     private const TABLE_NAME = 'kpg_api_permission';
 
-    public function install()
+    public function install(): void
     {
         global $ilDB;
         if (!$ilDB->tableExists(self::TABLE_NAME)) {
@@ -29,7 +29,7 @@ class APIPermissionTable
         }
     }
 
-    public function uninstall()
+    public function uninstall(): void
     {
         global $ilDB;
         if ($ilDB->tableExists(self::TABLE_NAME)) {
@@ -50,7 +50,7 @@ class APIPermissionTable
         return true;
     }
 
-    public function getPermissionByRoleID(int $role_id)
+    public function getPermissionByRoleID(int $role_id): int
     {
         global $ilDB;
         $sql = "SELECT permission FROM " . self::TABLE_NAME . " WHERE role_id = " . $ilDB->quote($role_id, "integer") . "
@@ -64,7 +64,7 @@ class APIPermissionTable
         return $result['permission'];
     }
 
-    public function getAll()
+    public function getAll(): array
     {
         global $ilDB;
         $sql = "SELECT * FROM " . self::TABLE_NAME;
@@ -79,7 +79,7 @@ class APIPermissionTable
         return $records;
     }
 
-    public function getCustomRoles()
+    public function getCustomRoles(): array
     {
         global $ilDB;
         $sql = "SELECT * FROM " . self::TABLE_NAME . " WHERE permission = 1";

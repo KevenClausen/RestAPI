@@ -6,7 +6,7 @@ class RolesPermissionTable
 {
     private const TABLE_NAME = 'kpg_api_co_permission';
 
-    public function install()
+    public function install(): void
     {
         global $ilDB;
         if (!$ilDB->tableExists(self::TABLE_NAME)) {
@@ -34,7 +34,7 @@ class RolesPermissionTable
         }
     }
 
-    public function uninstall()
+    public function uninstall(): void
     {
         global $ilDB;
         if ($ilDB->tableExists(self::TABLE_NAME)) {
@@ -85,12 +85,12 @@ class RolesPermissionTable
         ";
         $ilDB->manipulate($sql);
     }
-    public function getAllByRoleID(int $role_id)
+    public function getAllByRoleID(int $role_id): array
     {
         global $ilDB;
         $sql = "SELECT * FROM " . self::TABLE_NAME . " WHERE role_id = " . $ilDB->quote($role_id, "integer") . "";
         $result = $ilDB->query($sql);
-        $records = null;
+        $records = [];
         while ($record = $ilDB->fetchAssoc($result)) {
             $records[] = $record;
         }

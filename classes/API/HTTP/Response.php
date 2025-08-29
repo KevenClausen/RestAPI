@@ -4,7 +4,7 @@ namespace KPG\RestAPI\API\HTTP;
 
 use KPG\RestAPI\API\QueryParameters\QueryProcessor;
 use KPG\RestAPI\API\RequestData;
-use KPG\RestAPI\ILIAS\Logger\Logger;
+use KPG\RestAPI\API\Logger\Logger;
 
 class Response
 {
@@ -94,10 +94,10 @@ class Response
         $json_response = json_encode($responseBody);
         Logger::setResponseBody($json_response);
         Logger::setResponseCode($this->responseCode);
-        Logger::writeLog();
-
         header('Content-Type: application/json');
         echo $json_response;
+        Logger::stopTime();
+        Logger::writeLog();
         exit();
     }
 }

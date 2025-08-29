@@ -10,7 +10,7 @@ interface LangConstant
     public const LANG_TAB_SUB_API_PERMISSION = 'lang_tab_sub_api_permission';
     public const LANG_TAB_SUB_ROLE_PERMISSION = 'lang_tab_sub_role_permission';
     public const LANG_TAB_SUB_LOGS_DEFAULT = 'lang_tab_sub_logs_default';
-    public const LANG_TAB_SUB_LOGS_ERROR = 'lang_tab_sub_logs_error';
+    public const LANG_TAB_SUB_LOGS_SETTINGS = 'lang_tab_sub_logs_settings';
     public const LANG_PERMISSION_ROLE_SECTION = "lang_permission_role_section";
     public const LANG_PERMISSION_ROLE_SECTION_BYLINE = "lang_permission_role_section_byline";
     public const LANG_API_PERMISSION_RADIO_BUTTON_NO_PERMISSION = "lang_api_permission_radio_button_no_permission";

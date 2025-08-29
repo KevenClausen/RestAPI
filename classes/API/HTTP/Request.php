@@ -4,7 +4,7 @@ namespace KPG\RestAPI\API\HTTP;
 
 use KPG\RestAPI\API\RequestData;
 use KPG\RestAPI\ILIAS\Authenticator;
-use KPG\RestAPI\ILIAS\Logger\Logger;
+use KPG\RestAPI\API\Logger\Logger;
 use KPG\RestAPI\API\Exception\BaseException;
 
 class Request

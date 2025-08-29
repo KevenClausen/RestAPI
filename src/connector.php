@@ -2,9 +2,11 @@
 
 use KPG\RestAPI\ILIAS\Authenticator;
 use KPG\RestAPI\ILIAS\ILIASInit;
-use KPG\RestAPI\ILIAS\Logger\Logger;
+use KPG\RestAPI\API\Logger\Logger;
 use KPG\RestAPI\API\HTTP\Request;
 use KPG\RestAPI\API\HTTP\Response;
+
+Logger::startTime();
 
 require_once('ILIASInit.php');
 ILIASInit::init();
@@ -19,5 +21,9 @@ try {
         (new Response())->send401();
     }
 } catch (Exception $e) {
-    echo $e->getMessage();
+    if (defined('DEVMODE') && DEVMODE) {
+        echo $e->getMessage();
+    } else {
+        Response::send500();
+    }
 }
