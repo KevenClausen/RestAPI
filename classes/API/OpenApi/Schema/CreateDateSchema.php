@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Schema;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Schema(
     schema: "CreateDateSchema",
     description: "The creation date of the object in ISO 8601 format",
@@ -9,4 +11,6 @@ use OpenApi\Attributes as OA;
     format: "date-time",
     example: "2025-08-13T14:35:00Z"
 )]
-final class CreateDateSchema {}
+final class CreateDateSchema
+{
+}

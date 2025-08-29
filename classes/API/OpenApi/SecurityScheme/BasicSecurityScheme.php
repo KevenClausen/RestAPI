@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\SecurityScheme;
 
 use OpenApi\Attributes as OA;
@@ -8,4 +9,6 @@ use OpenApi\Attributes as OA;
     type: "http",
     description: "The username and password to authenticate with the API."
 )]
-final class BasicSecurityScheme{}
+final class BasicSecurityScheme
+{
+}

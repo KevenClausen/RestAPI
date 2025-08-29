@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\ILIAS\Test\classes;
 
 use KPG\RestAPI\ILIAS\Test\TestUtilHandler;
@@ -6,7 +7,8 @@ use KPG\RestAPI\API\Exception\TestNotFoundException;
 use ilObjUser;
 use KPG\RestAPI\API\Exception\UserNotFoundException;
 
-class TestResultHandler {
+class TestResultHandler
+{
     private TestUtilHandler $utilHandler;
 
     public function __construct()
@@ -14,7 +16,7 @@ class TestResultHandler {
         $this->utilHandler = new TestUtilHandler();
     }
 
-    public function getResultsByRefId(int $test_ref_id) : array
+    public function getResultsByRefId(int $test_ref_id): array
     {
         if (!$this->utilHandler->testExists($test_ref_id)) {
             throw new TestNotFoundException();
@@ -36,7 +38,7 @@ class TestResultHandler {
                 'timestamp' => $result['test']['result_tstamp'],
             ];
         }
-            return $results;
+        return $results;
     }
 
     public function getResultsByRefIdAndUserID(int $ref_id, int $user_id): array
@@ -44,7 +46,7 @@ class TestResultHandler {
         if (!$this->utilHandler->testExists($ref_id)) {
             throw new TestNotFoundException();
         }
-        if(!ilObjUser::_exists($user_id)) {
+        if (!ilObjUser::_exists($user_id)) {
             throw new UserNotFoundException();
         }
         $obj_user = new \ilObjUser($user_id);

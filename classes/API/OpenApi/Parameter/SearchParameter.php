@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Parameter;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Parameter(
     parameter: "SearchParameter",
     name: "search",
@@ -13,4 +15,6 @@ use OpenApi\Attributes as OA;
         example: "search[title]=example"
     )
 )]
-final class SearchParameter {}
+final class SearchParameter
+{
+}

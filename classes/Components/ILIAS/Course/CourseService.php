@@ -51,7 +51,7 @@ class CourseService extends BaseService
         $handler = new CourseHandler();
         $this->response->setResponseCode(200);
         $result = $handler->getCourse();
-        if(!empty($result)) {
+        if (!empty($result)) {
             $this->response->setResponseData($result);
         }
         $this->response->send();
@@ -691,7 +691,7 @@ class CourseService extends BaseService
     {
         $handler = new CourseUserHandler();
         $result = $handler->getAllUsers($this->path_params->getValueByKey('ref_id'));
-        if(!empty($result)) {
+        if (!empty($result)) {
             $this->response->setResponseData($result);
         }
         $this->response->setResponseCode(200);
@@ -765,7 +765,7 @@ class CourseService extends BaseService
     {
         $handler = new CourseUserHandler();
         $result = $handler->getAllUsers($this->path_params->getValueByKey('ref_id'), "member");
-        if(!empty($result)) {
+        if (!empty($result)) {
             $this->response->setResponseData($result);
         }
         $this->response->setResponseCode(200);
@@ -839,7 +839,7 @@ class CourseService extends BaseService
     {
         $handler = new CourseUserHandler();
         $result = $handler->getAllUsers($this->path_params->getValueByKey('ref_id'), "tutor");
-        if(!empty($result)) {
+        if (!empty($result)) {
             $this->response->setResponseData($result);
         }
         $this->response->setResponseCode(200);
@@ -913,7 +913,7 @@ class CourseService extends BaseService
     {
         $handler = new CourseUserHandler();
         $result = $handler->getAllUsers($this->path_params->getValueByKey('ref_id'), "admin");
-        if(!empty($result)) {
+        if (!empty($result)) {
             $this->response->setResponseData($result);
         }
         $this->response->setResponseCode(200);
@@ -1033,14 +1033,15 @@ class CourseService extends BaseService
                     )
                 )
             )
-        ])]
+        ]
+    )]
     public function getCourseInformation(): void
     {
         $course_ref_id = $this->path_params->getValueByKey('ref_id');
         $course_property = $this->path_params->getValueByKey('property');
         $handler = new CourseHandler();
         $result = $handler->getCourseInformation($course_ref_id, $course_property);
-        if(!empty([$result])) {
+        if (!empty([$result])) {
             $this->response->setResponseData([$result]);
         }
         $this->response->setResponseCode(200);
@@ -1065,11 +1066,10 @@ class CourseService extends BaseService
         $course_ref_id = $this->path_params->getValueByKey('ref_id');
         $handler = new CourseHandler();
         $result = $handler->getCourseRoles($course_ref_id);
-        if(!empty($result)) {
+        if (!empty($result)) {
             $this->response->setResponseData($result);
         }
         $this->response->setResponseCode(200);
         $this->response->send();
     }
 }
-

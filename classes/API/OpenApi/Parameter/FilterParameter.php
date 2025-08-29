@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Parameter;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Parameter(
     parameter: "FilterParameter",
     name: "filter",
@@ -13,4 +15,6 @@ use OpenApi\Attributes as OA;
         example: "filter[status.eq]=active&filter[price.between]=10,20"
     )
 )]
-final class FilterParameter {}
+final class FilterParameter
+{
+}

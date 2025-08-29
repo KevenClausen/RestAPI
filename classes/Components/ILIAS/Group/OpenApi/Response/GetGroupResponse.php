@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\Components\ILIAS\Group\OpenApi\Response;
 
 use OpenApi\Attributes as OA;
@@ -22,4 +23,6 @@ use OpenApi\Attributes as OA;
         ]
     )
 )]
-final class GetGroupResponse {}
+final class GetGroupResponse
+{
+}

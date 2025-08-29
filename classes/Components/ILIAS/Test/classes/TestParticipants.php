@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\ILIAS\Test\classes;
 
 use KPG\RestAPI\ILIAS\Test\TestUtilHandler;
@@ -6,8 +7,8 @@ use KPG\RestAPI\API\Exception\TestNotFoundException;
 use ilTestParticipantList;
 use ilObjUser;
 
-class TestParticipants {
-
+class TestParticipants
+{
     private $DIC;
     private TestUtilHandler $utilHandler;
 
@@ -18,7 +19,7 @@ class TestParticipants {
         $this->utilHandler = new TestUtilHandler();
     }
 
-    public function getParticipants(int $test_ref_id) : array
+    public function getParticipants(int $test_ref_id): array
     {
         if (!$this->utilHandler->testExists($test_ref_id)) {
             throw new TestNotFoundException();

@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Parameter;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Parameter(
     parameter: "OrderParameter",
     name: "order",
@@ -10,4 +12,6 @@ use OpenApi\Attributes as OA;
     required: false,
     schema: new OA\Schema(type: "string", example: "title:asc")
 )]
-final class OrderParameter {}
+final class OrderParameter
+{
+}

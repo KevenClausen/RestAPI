@@ -72,11 +72,11 @@ class PageHandler implements TabConstant, LangConstant, CMDConstant
             self::getLang(self::LANG_TAB_API_DOCUMENTATION),
             $DIC->ctrl()->getLinkTargetByClass(ilRestAPIConfigGUI::class, self::CMD_SHOW_API_DOCUMENTATION)
         );
-        /*     $DIC->tabs()->addTab(
-                 self::TAB_ID_LOGS,
-                 self::getLang(self::LANG_TAB_LOGS),
-                 $DIC->ctrl()->getLinkTargetByClass(ilRestAPIConfigGUI::class, self::CMD_SHOW_LOGS)
-             ); */
+        $DIC->tabs()->addTab(
+            self::TAB_ID_LOGS,
+            self::getLang(self::LANG_TAB_LOGS),
+            $DIC->ctrl()->getLinkTargetByClass(ilRestAPIConfigGUI::class, self::CMD_SHOW_LOGS)
+        );
     }
 
     private static function initSubTab(string $main_tab): void

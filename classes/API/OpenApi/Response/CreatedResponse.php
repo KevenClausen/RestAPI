@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Response;
 
 use OpenApi\Attributes as OA;
@@ -13,4 +14,6 @@ use OpenApi\Attributes as OA;
         ]
     )
 )]
-final class CreatedResponse {}
+final class CreatedResponse
+{
+}

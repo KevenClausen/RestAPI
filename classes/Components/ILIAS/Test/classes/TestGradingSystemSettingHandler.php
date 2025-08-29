@@ -1,11 +1,12 @@
 <?php
+
 namespace KPG\RestAPI\ILIAS\Test;
 
 use KPG\RestAPI\API\Exception\TestNotFoundException;
 use KPG\RestAPI\API\Exception\AttributesNotFoundException;
 
-class TestGradingSystemSettingHandler {
-
+class TestGradingSystemSettingHandler
+{
     private $DIC;
     private TestUtilHandler $utilHandler;
 
@@ -37,16 +38,16 @@ class TestGradingSystemSettingHandler {
 
     public function addGrading(int $ref_id, array $new_grading): void
     {
-        if(!array_key_exists('short_name', $new_grading)) {
+        if (!array_key_exists('short_name', $new_grading)) {
             throw new AttributesNotFoundException(["missing_argument" => 'short_name']);
         }
-        if(!array_key_exists('official_name', $new_grading)) {
+        if (!array_key_exists('official_name', $new_grading)) {
             throw new AttributesNotFoundException(["missing_argument" => 'official_name']);
         }
-        if(!array_key_exists('minimum_level', $new_grading)) {
+        if (!array_key_exists('minimum_level', $new_grading)) {
             throw new AttributesNotFoundException(["missing_argument" => 'minimum_level']);
         }
-        if(!array_key_exists('passed', $new_grading)) {
+        if (!array_key_exists('passed', $new_grading)) {
             throw new AttributesNotFoundException(["missing_argument" => 'passed']);
         }
         if (!$this->utilHandler->testExists($ref_id)) {
@@ -66,7 +67,7 @@ class TestGradingSystemSettingHandler {
         $obj_test = new \ilObjTest($ref_id, true);
         $obj_mark = $obj_test->getMarkSchema();
         foreach ($obj_test->getMarkSchema()->getMarkSteps() as $index => $mark) {
-            if($mark->getShortName() == $short_name) {
+            if ($mark->getShortName() == $short_name) {
                 $obj_mark->deleteMarkStep($index);
                 $obj_mark->saveToDb($obj_test->getTestId());
                 return;
@@ -76,16 +77,16 @@ class TestGradingSystemSettingHandler {
     }
     public function patchGrading(int $ref_id, array $update_data): void
     {
-        if(!array_key_exists('short_name', $update_data)) {
+        if (!array_key_exists('short_name', $update_data)) {
             throw new AttributesNotFoundException(["missing_argument" => 'short_name']);
         }
-        if(!array_key_exists('official_name', $update_data)) {
+        if (!array_key_exists('official_name', $update_data)) {
             throw new AttributesNotFoundException(["missing_argument" => 'official_name']);
         }
-        if(!array_key_exists('minimum_level', $update_data)) {
+        if (!array_key_exists('minimum_level', $update_data)) {
             throw new AttributesNotFoundException(["missing_argument" => 'minimum_level']);
         }
-        if(!array_key_exists('passed', $update_data)) {
+        if (!array_key_exists('passed', $update_data)) {
             throw new AttributesNotFoundException(["missing_argument" => 'passed']);
         }
 
@@ -96,7 +97,7 @@ class TestGradingSystemSettingHandler {
         $obj_test = new \ilObjTest($ref_id, true);
         $obj_mark = $obj_test->getMarkSchema();
         foreach ($obj_test->getMarkSchema()->getMarkSteps() as $index => $mark) {
-            if($mark->getShortName() == $update_data['short_name'] OR $mark->getOfficialName() == $update_data['official_name'] OR $mark->getMinimumLevel() == $update_data['minimum_level']) {
+            if ($mark->getShortName() == $update_data['short_name'] or $mark->getOfficialName() == $update_data['official_name'] or $mark->getMinimumLevel() == $update_data['minimum_level']) {
                 $mark->setPassed((int) $update_data['passed']);
                 $mark->setOfficialName($update_data['official_name']);
                 $mark->setShortName($update_data['short_name']);

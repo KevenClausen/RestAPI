@@ -1,5 +1,7 @@
 <?php
+
 namespace KPG\RestAPI\Components\ILIAS\Category\OpenApi\Schema;
+
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(

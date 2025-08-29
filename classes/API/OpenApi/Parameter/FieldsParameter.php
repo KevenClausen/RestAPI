@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Parameter;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Parameter(
     parameter: "FieldsParameter",
     name: "fields",
@@ -10,4 +12,6 @@ use OpenApi\Attributes as OA;
     required: false,
     schema: new OA\Schema(type: "string", example: "name,description,date")
 )]
-final class FieldsParameter {}
+final class FieldsParameter
+{
+}

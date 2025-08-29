@@ -7,10 +7,9 @@ use KPG\RestAPI\API\Exception\UserNotFoundException;
 
 class RepositoryLPHandler
 {
-
     public function getLPByRefID(int $ref_id): array
     {
-        if(!\ilObject::_exists($ref_id, true)) {
+        if (!\ilObject::_exists($ref_id, true)) {
             throw new ObjectNotFoundException();
         }
         $obj_id = \ilObject::_lookupObjId($ref_id);
@@ -41,10 +40,10 @@ class RepositoryLPHandler
     }
     public function getLPByRefIDAndUserID(int $ref_id, int $user_id): string
     {
-        if(!\ilObject::_exists($ref_id, true)) {
+        if (!\ilObject::_exists($ref_id, true)) {
             throw new ObjectNotFoundException();
         }
-        if(!\ilObjUser::_exists($user_id)) {
+        if (!\ilObjUser::_exists($user_id)) {
             throw new UserNotFoundException();
         }
         $obj_id = \ilObject::_lookupObjId($ref_id);

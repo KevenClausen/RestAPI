@@ -12,10 +12,5 @@
     "psr-4": {
       "KPG\\RestAPI\\": "classes/"
     }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "echo 'Installation abgeschlossen! Viel Spaß mit swagger-php!'"
-    ]
   }
 }

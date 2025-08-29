@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\API\Exception;
 
 class UserLoginExistsException extends BaseException

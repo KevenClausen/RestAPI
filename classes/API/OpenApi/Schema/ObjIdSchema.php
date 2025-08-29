@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Schema;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Schema(
     schema: "ObjIdSchema",
     description: "Object Identifier of ILIAS Object",
@@ -9,4 +11,6 @@ use OpenApi\Attributes as OA;
     format: "int64",
     example: 612
 )]
-final class ObjIdSchema {}
+final class ObjIdSchema
+{
+}

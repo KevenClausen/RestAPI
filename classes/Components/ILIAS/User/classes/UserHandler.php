@@ -84,7 +84,7 @@ class UserHandler
                 if (\ilObject::_isInTrash($ref_id)) {
                     continue;
                 }
-                $obj_course = new  \ilObjCourse($ref_id, true);
+                $obj_course = new \ilObjCourse($ref_id, true);
                 if ($obj_course->getMembersObject()->isAssigned($user_id)) {
                     $course = [
                         "ref_id" => $ref_id,
@@ -114,7 +114,7 @@ class UserHandler
                 if (\ilObject::_isInTrash($ref_id)) {
                     continue;
                 }
-                $obj_group = new  \ilObjGroup($ref_id, true);
+                $obj_group = new \ilObjGroup($ref_id, true);
                 if ($obj_group->getMembersObject()->isAssigned($user_id)) {
                     $group = [
                         "ref_id" => $ref_id,
@@ -234,7 +234,7 @@ class UserHandler
                 }
             }
         }
-        if(empty($user_custom_fields)) {
+        if (empty($user_custom_fields)) {
             throw new AttributesNotFoundException(['custom_fields']);
         }
         $error_field = [];

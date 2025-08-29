@@ -2,7 +2,6 @@
 
 namespace KPG\RestAPI\ILIAS\Category\classes;
 
-
 use KPG\RestAPI\API\Exception\CategoryNotFoundException;
 
 class CategoryHandler

@@ -1,11 +1,15 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Schema;
+
 use OpenApi\Attributes as OA;
+
 #[OA\Schema(
     schema: "ResponseDefaultSchema",
     description: "Standard API response structure"
 )]
-final class ResponseDefaultSchema{
+final class ResponseDefaultSchema
+{
     #[OA\Property(
         property: "status_code",
         type: "integer",

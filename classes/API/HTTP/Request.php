@@ -23,8 +23,8 @@ class Request
         $requestedUriParts = explode('/', $requestedUri);
 
         $route_file = $this->baseDir . "/" . strtoupper($requestedUriParts[0]) . "/" . ucfirst(
-                $requestedUriParts[1]
-            ) . "/structure/" . ucfirst($requestedUriParts[1]) . "Routes.php";
+            $requestedUriParts[1]
+        ) . "/structure/" . ucfirst($requestedUriParts[1]) . "Routes.php";
 
         if (!file_exists($route_file)) {
             $reponse->send404();
@@ -41,10 +41,10 @@ class Request
                     }
                 }
                 $class = "KPG\\RestAPI\\Components\\" . strtoupper($requestedUriParts[0]) . "\\" . ucfirst(
-                        $requestedUriParts[1]
-                    ) . "\\" . ucfirst(
-                        $requestedUriParts[1]
-                    ) . "Service";
+                    $requestedUriParts[1]
+                ) . "\\" . ucfirst(
+                    $requestedUriParts[1]
+                ) . "Service";
 
                 if (!$class) {
                     $reponse->send500();
@@ -52,8 +52,10 @@ class Request
                 global $DIC;
                 $user_id = $DIC->user()->getId();
                 if (!$auth->checkComponentPermission(
-                        $user_id, ucfirst($requestedUriParts[1]), $route['http_method']
-                    ) && !$auth->checkFullAccessPermission($user_id)) {
+                    $user_id,
+                    ucfirst($requestedUriParts[1]),
+                    $route['http_method']
+                ) && !$auth->checkFullAccessPermission($user_id)) {
                     $reponse->send404();
                 }
 

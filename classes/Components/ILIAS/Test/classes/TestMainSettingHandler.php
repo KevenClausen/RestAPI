@@ -4,8 +4,8 @@ namespace KPG\RestAPI\ILIAS\Test;
 
 use KPG\RestAPI\API\Exception\TestNotFoundException;
 
-class TestMainSettingHandler {
-
+class TestMainSettingHandler
+{
     private $DIC;
     private TestUtilHandler $utilHandler;
 
@@ -75,7 +75,8 @@ class TestMainSettingHandler {
         $return_array['test_run']['limit_duration_of_test']['processing_time'] = $test_run_settings->getProcessingTime(
         );
         $return_array['test_run']['limit_duration_of_test']['resetprocessing_time'] = $test_run_settings->getResetProcessingTime(
-        );;
+        );
+        ;
 
         $return_array['test_run']['exam_view']['kiosk_mode_enabled'] = $test_run_settings->getKioskModeEnabled();
         $return_array['test_run']['exam_view']['title_in_kiosk_mode_enabled'] = $test_run_settings->getShowTitleInKioskMode(

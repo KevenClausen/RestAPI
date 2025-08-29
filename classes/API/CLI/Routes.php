@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\API\CLI;
 
 error_reporting(0);
@@ -73,7 +74,7 @@ if (isset($argv)) {
             ]);
 
             $json = $openApi->toJson();
-            if(file_exists($this->outputPath)){
+            if (file_exists($this->outputPath)) {
                 unlink($this->outputPath);
             }
             $this->writeFile($this->outputPath, $json);
@@ -83,11 +84,15 @@ if (isset($argv)) {
             // Generate component routes
             $this->logStep("Processing component routes...");
             foreach (new \DirectoryIterator($this->baseDir) as $folder) {
-                if ($folder->isDot() || !$folder->isDir()) continue;
+                if ($folder->isDot() || !$folder->isDir()) {
+                    continue;
+                }
 
                 $folderName = $folder->getFilename();
                 foreach (new \DirectoryIterator($folder->getPathname()) as $dir) {
-                    if ($dir->isDot() || !$dir->isDir()) continue;
+                    if ($dir->isDot() || !$dir->isDir()) {
+                        continue;
+                    }
 
                     $componentName = $dir->getFilename();
                     if (isset($openApiArray[$componentName])) {
@@ -125,7 +130,9 @@ if (isset($argv)) {
             if (isset($data['paths'])) {
                 foreach ($data['paths'] as $path => $methods) {
                     foreach ($methods as $httpMethod => $methodDetails) {
-                        if (!isset($methodDetails['tags'])) continue;
+                        if (!isset($methodDetails['tags'])) {
+                            continue;
+                        }
                         foreach ($methodDetails['tags'] as $tag) {
                             $result[$tag][] = [
                                 'route' => $path,
@@ -266,12 +273,16 @@ if (isset($argv)) {
             $classes = [];
 
             $scanDir = function (string $dir) use (&$classes) {
-                if (!is_dir($dir)) return;
+                if (!is_dir($dir)) {
+                    return;
+                }
 
                 $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
 
                 foreach ($rii as $file) {
-                    if (!$file->isFile() || $file->getExtension() !== 'php') continue;
+                    if (!$file->isFile() || $file->getExtension() !== 'php') {
+                        continue;
+                    }
 
                     $content = file_get_contents($file->getPathname());
 

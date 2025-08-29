@@ -51,7 +51,7 @@ class UserDataExchangeHandler
         $arr_usr_ids = explode(',', $user_id);
         $export_array = [];
         foreach ($arr_usr_ids as $usr_id) {
-            $export_array[] = $this->exportUser((int)$usr_id);
+            $export_array[] = $this->exportUser((int) $usr_id);
         }
         return $export_array;
     }
@@ -59,7 +59,8 @@ class UserDataExchangeHandler
     public function exportUser(int $user_id): array
     {
         if (!$this->utilHandler->userExists($user_id)) {
-            throw new UserNotFoundException(['failed_user_id' => $user_id]);;
+            throw new UserNotFoundException(['failed_user_id' => $user_id]);
+            ;
         }
 
         $obj_user = new \ilObjUser($user_id);
@@ -109,7 +110,7 @@ class UserDataExchangeHandler
             if (in_array($key, $this->not_valid_property)) {
                 continue;
             }
-            if(!in_array($key, ['userdefineddata', 'roles'])) {
+            if (!in_array($key, ['userdefineddata', 'roles'])) {
                 $method_name = "set" . ucfirst($key);
                 $new_obj_user->$method_name($value);
             }

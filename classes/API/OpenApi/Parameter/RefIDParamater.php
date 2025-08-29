@@ -1,7 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi\Parameter;
 
 use OpenApi\Attributes as OA;
+
 #[OA\Parameter(
     parameter: "RefIDParamater",
     name: "ref_id",
@@ -13,4 +15,6 @@ use OpenApi\Attributes as OA;
         example: 122
     )
 )]
-final class RefIDParamater {}
+final class RefIDParamater
+{
+}

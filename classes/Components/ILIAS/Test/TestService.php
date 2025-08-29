@@ -21,7 +21,6 @@ use KPG\RestAPI\ILIAS\Test\classes\TestResultHandler;
                   &nbsp;&nbsp;<b>Author:</b> Keven Clausen, Kröpelin Projekt GmbH<br />
                   &nbsp;&nbsp;<b>E-Mail:</b> info@kroepelin-projekte.de<br />
                   &nbsp;&nbsp;<b>Version:</b> 1.0.0",
-
 )]
 class TestService extends BaseService
 {

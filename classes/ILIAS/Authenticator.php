@@ -114,9 +114,9 @@ class Authenticator
         $permission_roles = (new APIPermissionTable())->getAll();
         foreach ($permission_roles as $permission_role) {
             if ((in_array(
-                        $permission_role['role_id'],
-                        self::getGlobalRolesByUserID($DIC->user()->getId())
-                    ) && $permission_role['permission'] != 0) || self::isUserAdmin($DIC->user()->getId())) {
+                $permission_role['role_id'],
+                self::getGlobalRolesByUserID($DIC->user()->getId())
+            ) && $permission_role['permission'] != 0) || self::isUserAdmin($DIC->user()->getId())) {
                 return true;
             }
         }

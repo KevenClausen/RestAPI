@@ -132,7 +132,8 @@ class RepositoryService extends BaseService
     {
         $handler = new RepositoryHandler();
         $this->response->setResponseCode(200);
-        $this->response->setResponseData(["parent" => $handler->getParent($this->path_params->getValueByKey('ref_id'))]
+        $this->response->setResponseData(
+            ["parent" => $handler->getParent($this->path_params->getValueByKey('ref_id'))]
         );
         $this->response->send();
     }

@@ -124,7 +124,7 @@ class GroupHandler
         $obj_group = new \ilObjGroup($group_ref_id, true);
         $obj_methode = "get" . ucfirst($group_property);
         if (!method_exists($obj_group, $obj_methode)) {
-           throw new AttributesNotFoundException([$group_property]);
+            throw new AttributesNotFoundException([$group_property]);
         }
         $property_value = $obj_group->$obj_methode();
         return $property_value;

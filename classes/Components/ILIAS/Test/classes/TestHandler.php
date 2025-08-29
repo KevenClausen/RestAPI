@@ -137,7 +137,7 @@ class TestHandler
             $test_info['session_settings']['starting_time'] = $starting_time;
         }
 
-        $ending_time = $obj_test->getEndingTime();;
+        $ending_time = $obj_test->getEndingTime();
         if ($obj_test->isEndingTimeEnabled() && $ending_time !== 0) {
             $test_info['session_settings']['ending_time'] = $ending_time;
         }

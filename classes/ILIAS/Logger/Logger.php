@@ -2,6 +2,8 @@
 
 namespace KPG\RestAPI\ILIAS\Logger;
 
+use KPG\RestAPI\ILIAS\Database\Tables\APILogs;
+
 class Logger
 {
     private static int $user_id = 0;
@@ -43,13 +45,13 @@ class Logger
 
     public static function writeLog(): void
     {
-        /*  (new ApiLogs())->writeLog([
-              'user_id' => self::$user_id,
-              'requestUrl' => self::$requestUrl,
-              'httpMethod' => self::$httpMethod,
-              'requestBody' => self::$requestBody,
-              'responseBody' => self::$responseBody,
-              'responseCode' => self::$responseCode,
-          ]); */
+        (new ApiLogs())->writeLog([
+            'user_id' => self::$user_id,
+            'requestUrl' => self::$requestUrl,
+            'httpMethod' => self::$httpMethod,
+            'requestBody' => self::$requestBody,
+            'responseBody' => self::$responseBody,
+            'responseCode' => self::$responseCode,
+        ]);
     }
 }

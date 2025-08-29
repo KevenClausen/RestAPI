@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\Components\ILIAS\Course\OpenApi\Response;
 
 use OpenApi\Attributes as OA;
@@ -58,4 +59,6 @@ use OpenApi\Attributes as OA;
         ]
     )
 )]
-final class GetCourseResponse {}
+final class GetCourseResponse
+{
+}

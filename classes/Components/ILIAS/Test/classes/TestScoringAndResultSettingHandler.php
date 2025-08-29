@@ -1,8 +1,9 @@
 <?php
+
 namespace KPG\RestAPI\ILIAS\Test;
 
-class TestScoringAndResultSettingHandler {
-
+class TestScoringAndResultSettingHandler
+{
     private $DIC;
     private TestUtilHandler $utilHandler;
 

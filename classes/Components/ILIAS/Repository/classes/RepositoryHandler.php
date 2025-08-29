@@ -89,7 +89,7 @@ class RepositoryHandler
         global $DIC;
         $childs = [];
         foreach ($DIC->repositoryTree()->getChilds($ref_id) as $child) {
-            $childs[$child['ref_id']]['ref_id'] = (int)$child['ref_id'];
+            $childs[$child['ref_id']]['ref_id'] = (int) $child['ref_id'];
             $childs[$child['ref_id']]['obj_id'] = \ilObject::_lookupObjId($child['ref_id']);
             $childs[$child['ref_id']]['title'] = $child['title'];
             $childs[$child['ref_id']]['type'] = \ilObject::_lookupType(\ilObject::_lookupObjId($child['ref_id']));

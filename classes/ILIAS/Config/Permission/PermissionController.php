@@ -36,12 +36,16 @@ class PermissionController implements LangConstant, CmdConstant
     {
         if ($this->permissionModel->saveAPIPermission($this->permissionView->initFormAPIPermission())) {
             $this->DIC->ui()->mainTemplate()->setOnScreenMessage(
-                'success', self::getLang(self::LANG_API_PERMISSION_MSG_SUCCESS), true
+                'success',
+                self::getLang(self::LANG_API_PERMISSION_MSG_SUCCESS),
+                true
             );
             $this->DIC->ctrl()->redirectByClass(\ilRestAPIConfigGUI::class, self::CMD_SHOW_PERMISSION);
         } else {
             $this->DIC->ui()->mainTemplate()->setOnScreenMessage(
-                'success', self::getLang(self::LANG_API_PERMISSION_MSG_FAILED), true
+                'success',
+                self::getLang(self::LANG_API_PERMISSION_MSG_FAILED),
+                true
             );
             $this->DIC->ctrl()->redirectByClass(\ilRestAPIConfigGUI::class, self::CMD_SHOW_PERMISSION);
         }
@@ -61,11 +65,15 @@ class PermissionController implements LangConstant, CmdConstant
     {
         if ($this->permissionModel->saveRolePermission($this->permissionView->initFormRolePermission())) {
             $this->DIC->ui()->mainTemplate()->setOnScreenMessage(
-                'success', self::getLang(self::LANG_API_PERMISSION_MSG_SUCCESS), true
+                'success',
+                self::getLang(self::LANG_API_PERMISSION_MSG_SUCCESS),
+                true
             );
         } else {
             $this->DIC->ui()->mainTemplate()->setOnScreenMessage(
-                'success', self::getLang(self::LANG_API_PERMISSION_MSG_FAILED), true
+                'success',
+                self::getLang(self::LANG_API_PERMISSION_MSG_FAILED),
+                true
             );
         }
         $this->DIC->ctrl()->redirectByClass(\ilRestAPIConfigGUI::class, self::CMD_SHOW_ROLE_PERMISSION);

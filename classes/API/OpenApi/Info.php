@@ -1,5 +1,7 @@
 <?php
+
 namespace KPG\RestAPI\API\OpenApi;
+
 use OpenApi\Attributes as OA;
 
 #[OA\Info(
@@ -7,4 +9,6 @@ use OpenApi\Attributes as OA;
     description: "Describes the various components and endpoints of the ILIAS REST API.",
     title: "REST API FOR ILIAS"
 )]
-class Info {}
+class Info
+{
+}

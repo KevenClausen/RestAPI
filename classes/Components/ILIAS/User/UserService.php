@@ -1,6 +1,6 @@
 <?php
-namespace KPG\RestAPI\Components\ILIAS\User;
 
+namespace KPG\RestAPI\Components\ILIAS\User;
 
 use KPG\RestAPI\API\BaseService;
 use OpenApi\Attributes as OA;
@@ -63,7 +63,7 @@ class UserService extends BaseService
     {
         $user_id = $this->path_params->getValueByKey('user_id');
         $handler = new UserHandler();
-        $user_data =$handler->getUserInformation($user_id);
+        $user_data = $handler->getUserInformation($user_id);
         $this->response->setResponseData($handler->getUserInformation($user_id));
         $this->response->setResponseCode(200);
         $this->response->send();
@@ -169,7 +169,7 @@ class UserService extends BaseService
     public function addUserRoleEntry(): void
     {
         $user_id = $this->path_params->getValueByKey('user_id');
-        $role_id= $this->path_params->getValueByKey('role_id');
+        $role_id = $this->path_params->getValueByKey('role_id');
         $handler = new UserHandler();
         $handler->addUserRole($user_id, $role_id);
         $this->response->setResponseCode(201);
@@ -192,11 +192,11 @@ class UserService extends BaseService
     public function deleteUserRoleEntry(): void
     {
         $user_id = $this->path_params->getValueByKey('user_id');
-        $role_id= $this->path_params->getValueByKey('role_id');
+        $role_id = $this->path_params->getValueByKey('role_id');
         $handler = new UserHandler();
-         $handler->removeUserRole($user_id, $role_id);
-         $this->response->setResponseCode(201);
-         $this->response->send();
+        $handler->removeUserRole($user_id, $role_id);
+        $this->response->setResponseCode(201);
+        $this->response->send();
     }
     #[OA\DELETE(
         path: '/ilias/user/{user_id}',
@@ -302,7 +302,7 @@ class UserService extends BaseService
     {
         $user_id = $this->path_params->getValueByKey('user_id');
         $handler = new UserHandler();
-        if($handler->userExists($user_id)) {
+        if ($handler->userExists($user_id)) {
             $this->response->setResponseCode(200);
         } else {
             $this->response->setResponseCode(404);
