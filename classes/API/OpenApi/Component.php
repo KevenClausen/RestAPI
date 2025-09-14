@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\Components\KPG\OpenApi;
 
 use OpenApi\Attributes as OA;
@@ -63,4 +64,6 @@ use OpenApi\Attributes as OA;
         new OA\SecurityScheme(ref: \KPG\RestAPI\API\OpenApi\SecurityScheme\BasicSecurityScheme::class),
     ],
 )]
-final class Component {}
+final class Component
+{
+}

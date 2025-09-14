@@ -31,6 +31,7 @@ class ilRestAPIPlugin extends ilEventHookPlugin
 
     protected function afterUninstall(): void
     {
-        (new KPG\RestAPI\ILIAS\Setup\DatabaseSetup())->uninstall();
+        global $ilDB;
+        (new \KPG\RestAPI\ILIAS\Database\DatabaseSetup())->uninstall($ilDB);
     }
 }

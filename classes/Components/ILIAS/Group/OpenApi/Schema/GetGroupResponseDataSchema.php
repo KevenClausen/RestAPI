@@ -41,7 +41,6 @@ class GetGroupResponseDataSchema
     #[OA\Property(
         ref: "#/components/schemas/LastUpdateDataSchema",
         description: "Last update date"
-
     )]
     public string $last_update;
 

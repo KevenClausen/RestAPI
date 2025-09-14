@@ -1,21 +1,23 @@
-lang_tab_permission#:#Permissions
-lang_tab_api_documentation#:#API Documentation
-lang_tab_logs#:#Logs
-lang_tab_sub_api_permission#:#API Access Permissions
-lang_tab_sub_role_permission#:#Component Access Permissions
-lang_tab_sub_logs_default#:#General Log
-lang_tab_sub_logs_error#:#Error Log
-lang_permission_role_section#:#Role Sharing
-lang_permission_role_section_byline#:#Administrators always have access to the interface
-lang_api_permission_radio_button_no_permission#:#No Access
-lang_api_permission_radio_button_custom#:#Set Permissions
-lang_api_permission_radio_button_full_permission#:#Full Access
-lang_api_permission_msg_success#:#Permissions have been set
-lang_api_permission_msg_failed#:#Permissions could not be set. Please contact the system administrator
-lang_title_ilias_api_documentation#:#ILIAS REST API Documentation
-lang_link_to_documentation#:#Link to the Documentation
-lang_link_to_documentation_byline#:#This link shows the documentation filtered by role permissions
-lang_developer_documentation#:#Developer Documentation
-lang_role_permission#:#Role Permission
-lang_component_permission#:#Component Permission
+tab_permission#:#Permissions
+tab_api_documentation#:#API Documentation
+tab_logs#:#Logs
+tab_sub_log_table#:#Log
+tab_sub_log_setting#:#Settings
+tab_sub_api_permission#:#API Access Permissions
+tab_sub_role_permission#:#Component Access Permissions
+tab_sub_logs_default#:#General Log
+tab_sub_logs_error#:#Error Log
+permission_role_section#:#Role Sharing
+permission_role_section_byline#:#Administrators always have access to the interface
+api_permission_radio_button_no_permission#:#No Access
+api_permission_radio_button_custom#:#Set Permissions
+api_permission_radio_button_full_permission#:#Full Access
+api_permission_msg_success#:#Permissions have been set
+api_permission_msg_failed#:#Permissions could not be set. Please contact the system administrator
+title_ilias_api_documentation#:#ILIAS REST API Documentation
+link_to_documentation#:#Link to the Documentation
+link_to_documentation_byline#:#This link shows the documentation filtered by role permissions
+developer_documentation#:#Developer Documentation
+role_permission#:#Role Permission
+component_permission#:#Component Permission
 

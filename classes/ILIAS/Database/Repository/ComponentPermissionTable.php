@@ -1,46 +1,10 @@
 <?php
 
-namespace KPG\RestAPI\ILIAS\Database\Tables;
+namespace KPG\RestAPI\ILIAS\Database\Repository;
 
-class RolesPermissionTable
+class ComponentPermissionTable
 {
-    private const TABLE_NAME = 'kpg_api_co_permission';
-
-    public function install(): void
-    {
-        global $ilDB;
-        if (!$ilDB->tableExists(self::TABLE_NAME)) {
-            $fields = [
-                'component_name' => [
-                    'type' => 'text',
-                    'length' => 255,
-                    'notnull' => true
-                ],
-                'role_id' => [
-                    'type' => 'integer',
-                    'length' => 4,
-                    'notnull' => true
-
-                ],
-                'permission' => [
-                    'type' => 'text',
-                    'length' => 255,
-                    'notnull' => false
-                ],
-
-            ];
-            $ilDB->createTable(self::TABLE_NAME, $fields);
-            $ilDB->addPrimaryKey(self::TABLE_NAME, ['component_name', 'role_id']);
-        }
-    }
-
-    public function uninstall(): void
-    {
-        global $ilDB;
-        if ($ilDB->tableExists(self::TABLE_NAME)) {
-            $ilDB->dropTable(self::TABLE_NAME);
-        }
-    }
+    private const TABLE_NAME = 'kpg_api_component';
 
     public function insertOrUpdatePermission(string $component_name, int $role_id, string $permission): bool
     {

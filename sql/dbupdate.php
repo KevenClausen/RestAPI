@@ -1,5 +1,6 @@
 <#1>
 <?php
-(new KPG\RestAPI\ILIAS\Setup\DatabaseSetup())->install();
+global $ilDB;
+(new \KPG\RestAPI\ILIAS\Database\DatabaseSetup())->install($ilDB);
 ?>
 

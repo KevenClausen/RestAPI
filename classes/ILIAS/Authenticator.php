@@ -8,8 +8,9 @@ use ilAuthProviderFactory;
 use ilAuthStatus;
 use ilAuthFrontendFactory;
 use KPG\RestAPI\ILIAS\Util\Roles;
-use KPG\RestAPI\ILIAS\Database\Tables\APIPermissionTable;
-use KPG\RestAPI\ILIAS\Config\Permission\PermissionModel;
+use KPG\RestAPI\ILIAS\Database\Repository\RolePermissionTable;
+
+//use KPG\RestAPI\ILIAS\Config\Permission\PermissionModel;
 
 class Authenticator
 {
@@ -24,6 +25,7 @@ class Authenticator
      *
      * @return bool Returns true if the user is authenticated and has the required role permissions, otherwise false.
      */
+
     public function auth(): bool
     {
         global $DIC;
@@ -69,24 +71,27 @@ class Authenticator
      */
     public function checkComponentPermission(int $user_id, string $component_name, string $http_method): bool
     {
+        /*
         foreach (self::getGlobalRolesByUserID($user_id) as $role_id) {
             if ($role_id == "2") {
                 return true;
             }
-            $per = (new PermissionModel())->getCustomPermissionByComponentNameAndRoleID($component_name, $role_id);
+          $per = (new PermissionModel())->getCustomPermissionByComponentNameAndRoleID($component_name, $role_id);
             if (in_array(
                 $http_method,
-                (new PermissionModel())->getCustomPermissionByComponentNameAndRoleID($component_name, $role_id)
-            )) {
+               (new PermissionModel())->getCustomPermissionByComponentNameAndRoleID($component_name, $role_id)
+           )) {
                 return true;
             }
         }
-
+   */
         return false;
+
     }
 
     public function checkFullAccessPermission($user_id): bool
     {
+        /*
         $permission_model = new PermissionModel();
         $user_roles = self::getGlobalRolesByUserID($user_id);
         foreach ($user_roles as $role_id) {
@@ -94,7 +99,9 @@ class Authenticator
                 return true;
             }
         }
+        */
         return false;
+
     }
 
     /**
@@ -110,7 +117,7 @@ class Authenticator
     {
         global $DIC;
 
-        $permission_roles = (new APIPermissionTable())->getAll();
+        $permission_roles = (new RolePermissionTable())->getAll();
         foreach ($permission_roles as $permission_role) {
             if ((in_array(
                 $permission_role['role_id'],
@@ -121,5 +128,6 @@ class Authenticator
         }
         return false;
     }
+
 
 }

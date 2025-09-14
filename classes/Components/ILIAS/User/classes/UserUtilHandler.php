@@ -1,4 +1,5 @@
 <?php
+
 namespace KPG\RestAPI\ILIAS\User\classes;
 
 class UserUtilHandler
